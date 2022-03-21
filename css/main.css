@@ -2504,8 +2504,9 @@ blockquote {
   }
 
   .portfolio-grid figure,
+  .portfolio-grid.one-column figure,
   .portfolio-grid.three-columns figure {
-    width: 50%;
+    width: 100%;
   }
 
   .portfolio-grid.four-columns figure,
