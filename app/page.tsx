@@ -92,7 +92,7 @@ const cases = [
 const career = [
   { company: "트레드링스", role: "Backend Engineer · Manager", date: "2022.08 - 2026.06", detail: "해운 물류 SaaS의 데이터 수집, 선박 추적, 광고, CRM과 플랫폼 백엔드를 개발했습니다." },
   { company: "프리랜서", role: "Backend / Full-stack Engineer", date: "2021.08 - 2021.12", detail: "신한 O2O 서비스의 백엔드와 운영 기능을 개발했습니다." },
-  { company: "티웰", role: "Software Engineer", date: "2020.10 - 2021.07", detail: "Java 기반 업무 시스템과 서비스 기능을 개발했습니다." },
+  { company: "티웹", role: "Software Engineer", date: "2020.10 - 2021.07", detail: "Java 기반 업무 시스템과 서비스 기능을 개발했습니다." },
   { company: "드림시스", role: "Software Engineer", date: "2019.08 - 2020.08", detail: "기업용 웹 시스템 개발과 유지보수를 담당했습니다." },
 ];
 
@@ -216,9 +216,39 @@ export default function Home() {
       <section className="section other-work">
         <div className="section-kicker"><span>+</span> MORE WORK</div>
         <div className="other-grid">
-          <div><Layers3 size={23} /><h3>선사·터미널 스케줄 연동</h3><p>25개 이상 선사와 6개 터미널의 FCL, Vessel, Terminal 데이터를 API·EDI·크롤링으로 통합했습니다.</p><strong>일 약 5.9만 대상 · 1.7만 유효 스케줄</strong></div>
-          <div><ServerCog size={23} /><h3>운영 안정화와 모니터링</h3><p>Datadog 로그와 수집 모니터링을 기반으로 반복 오류를 추적하고 불필요한 알림과 운영 흐름을 정리했습니다.</p><strong>월 평균 약 7건 이슈 대응</strong></div>
-          <div><Network size={23} /><h3>White Label & Integration</h3><p>고객사별 브랜딩 설정, Plugin, Partner Mapview, Share Link와 SaaS 연동 API를 개발했습니다.</p><strong>SaaS 밖에서도 추적 기능 사용</strong></div>
+          <article>
+            <Layers3 size={23} />
+            <h3>선사·터미널 스케줄 연동</h3>
+            <p>공급자마다 다른 규격의 해운 스케줄을 제품에서 사용할 수 있는 공통 데이터로 변환했습니다.</p>
+            <ul>
+              <li>FCL·Vessel·Terminal 수집 API와 정규화 로직 개발</li>
+              <li>공식 API, EDIFACT EDI, 웹 크롤링 방식 통합</li>
+              <li>누락·중복·선박명 불일치 검증과 재수집 흐름 운영</li>
+            </ul>
+            <strong>25개 이상 선사 · 6개 터미널 · 일 약 1.7만 유효 스케줄</strong>
+          </article>
+          <article>
+            <ServerCog size={23} />
+            <h3>운영 안정화와 모니터링</h3>
+            <p>장애 대응을 일회성 조치로 끝내지 않고 로그, 수집 상태와 알림 흐름을 기준으로 반복 원인을 제거했습니다.</p>
+            <ul>
+              <li>Datadog 로그 기반 서비스 오류 원인과 영향 범위 추적</li>
+              <li>크롤링 수집량·실패 구간 모니터링과 복구 로직 점검</li>
+              <li>사용하지 않는 모니터링 제거와 알림 기준 정리</li>
+            </ul>
+            <strong>월 평균 약 7건의 운영 이슈 분석·대응</strong>
+          </article>
+          <article>
+            <Network size={23} />
+            <h3>White Label & Integration</h3>
+            <p>Ocean Visibility의 추적 기능을 고객사의 서비스와 브랜드 환경에서도 사용할 수 있도록 확장했습니다.</p>
+            <ul>
+              <li>고객사별 로고·색상·서비스 조건 설정 CRUD API 개발</li>
+              <li>Plugin, Partner Mapview, Share Link와 SaaS 데이터 연동</li>
+              <li>백오피스 관리 기능, 이메일 템플릿과 선박명 데이터 개선</li>
+            </ul>
+            <strong>SaaS 직접 방문 없이 고객사 채널에서 추적 기능 제공</strong>
+          </article>
         </div>
       </section>
 
