@@ -13,6 +13,15 @@ const nextConfig: NextConfig = {
       }
     : {}),
   images: { unoptimized: true },
+  turbopack: {
+    root: process.cwd(),
+    rules: {
+      "*.md": {
+        loaders: ["raw-loader"],
+        as: "*.js",
+      },
+    },
+  },
 };
 
 export default nextConfig;

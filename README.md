@@ -25,4 +25,10 @@ npm run build:pages
 
 ## Content
 
-주요 경력과 프로젝트 데이터는 `app/page.tsx`, 스타일은 `app/globals.css`에서 관리합니다.
+홈페이지 문구와 데이터는 아래 Markdown 파일의 YAML front matter에서 관리합니다.
+
+- `content/이력서.md`: 소개, 연락처, 핵심 수치, 기술 스택
+- `content/경력기술서.md`: 회사별 경력과 주요 업무 범위
+- `content/포트폴리오.md`: 대표 프로젝트와 More Work
+
+파일을 저장하면 개발 서버에서는 자동 반영되며, 배포 환경에서는 다시 빌드할 때 반영됩니다. 화면 구조와 디자인은 `app/PortfolioClient.tsx`, `app/globals.css`에서 관리합니다.
