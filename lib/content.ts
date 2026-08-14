@@ -4,7 +4,16 @@ import careerSource from "@/content/경력기술서.md";
 import portfolioSource from "@/content/포트폴리오.md";
 
 export type Skill = { label: string; icon: "code" | "server" | "database" | "network"; values: string };
-export type Career = { company: string; role: string; date: string; detail: string };
+export type Employment = { company: string; role: string; date: string; detail: string };
+export type CareerArea = {
+  number: string;
+  period: string;
+  title: string;
+  summary: string;
+  contributions: string[];
+  impact: string;
+  stack: string;
+};
 export type CaseStudy = { number: string; period: string; title: string; summary: string; metrics: string[]; stack: string; problem: string; actions: string[]; result: string };
 export type MoreWork = { icon: "layers" | "server" | "network"; title: string; summary: string; actions: string[]; result: string };
 export type SiteContent = {
@@ -12,8 +21,9 @@ export type SiteContent = {
     name: string; role: string; location: string; headline: string; accentHeadline: string; introduction: string;
     email: string; phone: string; githubLabel: string; githubUrl: string; careerDuration: string;
     resumeTitle: string; resumeDescription: string; stats: { value: string; label: string }[]; skills: Skill[];
+    employmentTitle: string; employmentRange: string; employment: Employment[];
   };
-  career: { subtitle: string; range: string; items: Career[]; highlightTitle: string; highlights: string[] };
+  career: { subtitle: string; areas: CareerArea[] };
   portfolio: { title: string; subtitle: string; cases: CaseStudy[]; moreWork: MoreWork[] };
 };
 
@@ -27,8 +37,8 @@ export function loadSiteContent(): SiteContent {
   const resume = readFrontMatter<SiteContent["resume"]>(resumeSource, "이력서.md");
   const career = readFrontMatter<SiteContent["career"]>(careerSource, "경력기술서.md");
   const portfolio = readFrontMatter<SiteContent["portfolio"]>(portfolioSource, "포트폴리오.md");
-  if (!resume.skills?.length || !career.items?.length || !portfolio.cases?.length) {
-    throw new Error("Markdown front matter에 skills, items, cases 데이터가 필요합니다.");
+  if (!resume.skills?.length || !resume.employment?.length || !career.areas?.length || !portfolio.cases?.length) {
+    throw new Error("Markdown front matter에 skills, employment, areas, cases 데이터가 필요합니다.");
   }
   return { resume, career, portfolio };
 }

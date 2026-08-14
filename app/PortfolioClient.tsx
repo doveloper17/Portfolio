@@ -131,24 +131,38 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
         <div className="skill-grid">
           {resume.skills.map(({ label, icon, values }) => { const Icon = skillIcons[icon]; return <div className="skill-row" key={label}><Icon size={20} /><span>{label}</span><strong>{values}</strong></div>; })}
         </div>
+        <div className="employment">
+          <div className="employment-heading">
+            <BriefcaseBusiness size={21} />
+            <div><strong>{resume.employmentTitle}</strong><span>{resume.employmentRange}</span></div>
+          </div>
+          <div className="employment-list">
+            {resume.employment.map((item) => (
+              <article key={`${item.company}-${item.date}`}>
+                <time>{item.date}</time>
+                <div><h3>{item.company}</h3><strong>{item.role}</strong></div>
+                <p>{item.detail}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="section career-section" id="career">
         <div className="section-kicker"><span>02</span> CAREER</div>
         <div className="section-heading-row"><h2>경력기술서</h2><p>{career.subtitle}</p></div>
-        <div className="career-layout">
-          <aside><BriefcaseBusiness size={22} /><strong>Experience</strong><span>{career.range}</span></aside>
-          <div className="timeline">
-            {career.items.map((item, index) => <article key={item.company} className="timeline-item">
-              <span className="timeline-dot">{index === 0 && <span>Latest</span>}</span>
-              <div className="timeline-date">{item.date}</div>
-              <div><h3>{item.company}</h3><p className="timeline-role">{item.role}</p><p>{item.detail}</p></div>
-            </article>)}
-          </div>
-        </div>
-        <div className="career-highlight">
-          <span>{career.highlightTitle}</span>
-          {career.highlights.map((highlight) => <div key={highlight}>{highlight}</div>)}
+        <div className="career-areas">
+          {career.areas.map((area) => (
+            <article className="career-area" key={area.number}>
+              <div className="career-area-meta"><span>{area.number}</span><time>{area.period}</time></div>
+              <div className="career-area-intro"><h3>{area.title}</h3><p>{area.summary}</p></div>
+              <div className="career-area-detail">
+                <ul>{area.contributions.map((contribution) => <li key={contribution}>{contribution}</li>)}</ul>
+                <div className="career-area-impact"><span>Impact</span><strong>{area.impact}</strong></div>
+                <div className="career-area-stack"><span>Stack</span><p>{area.stack}</p></div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
