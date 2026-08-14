@@ -2,9 +2,9 @@
 
 import {
   ArrowDown,
+  ArrowRight,
   ArrowUpRight,
   BriefcaseBusiness,
-  Check,
   ChevronDown,
   Code2,
   Database,
@@ -36,22 +36,44 @@ function CaseStudy({ item }: { item: CaseStudyType }) {
         </span>
         <span className="case-toggle" aria-hidden="true"><ChevronDown size={20} /></span>
       </button>
-      <div className="case-metrics">{item.metrics.map((metric) => <span key={metric}>{metric}</span>)}</div>
+      <div className="case-impact" aria-label={`${item.title} 핵심 성과`}>
+        {item.metrics.map((metric, index) => (
+          <div key={metric}>
+            <span>Impact {String(index + 1).padStart(2, "0")}</span>
+            <strong>{metric}</strong>
+          </div>
+        ))}
+      </div>
       {open && (
         <div className="case-detail">
-          <div>
-            <p className="detail-label">Problem</p>
-            <p>{item.problem}</p>
+          <div className="case-flow" aria-label="개선 전후 비교">
+            <div className="case-flow-block before">
+              <p className="detail-label">Challenge</p>
+              <h4>개선 전</h4>
+              <p>{item.problem}</p>
+            </div>
+            <div className="case-flow-arrow" aria-hidden="true"><ArrowRight size={21} /></div>
+            <div className="case-flow-block after">
+              <p className="detail-label">Outcome</p>
+              <h4>개선 후</h4>
+              <p>{item.result}</p>
+            </div>
           </div>
-          <div>
-            <p className="detail-label">My contribution</p>
-            <ul>{item.actions.map((action) => <li key={action}><Check size={16} />{action}</li>)}</ul>
+          <div className="case-decisions">
+            <div>
+              <p className="detail-label">My contribution</p>
+              <h4>기술적 판단과 기여</h4>
+            </div>
+            <ol>
+              {item.actions.map((action, index) => (
+                <li key={action}><span>{String(index + 1).padStart(2, "0")}</span><p>{action}</p></li>
+              ))}
+            </ol>
           </div>
-          <div>
-            <p className="detail-label">Result</p>
-            <p>{item.result}</p>
+          <div className="case-stack">
+            <span>Stack</span>
+            <p>{item.stack}</p>
           </div>
-          <p className="case-stack">{item.stack}</p>
         </div>
       )}
     </article>
@@ -63,7 +85,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
   return (
     <main>
       <header className="site-header">
-        <a className="wordmark" href="#home" aria-label={`${resume.name} 포트폴리오 홈`}>DH<span>.</span></a>
+        <a className="wordmark" href="#home" aria-label={`${resume.name} 포트폴리오 홈`}>Do Hoon<span>.</span></a>
         <nav aria-label="주요 메뉴">
           <a href="#resume">이력서</a><a href="#career">경력기술서</a><a href="#portfolio">포트폴리오</a>
         </nav>
