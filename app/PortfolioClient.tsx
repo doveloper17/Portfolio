@@ -36,13 +36,11 @@ function CaseStudy({ item }: { item: CaseStudyType }) {
         </span>
         <span className="case-toggle" aria-hidden="true"><ChevronDown size={20} /></span>
       </button>
-      <div className="case-impact" aria-label={`${item.title} 핵심 성과`}>
-        {item.metrics.map((metric, index) => (
-          <div key={metric}>
-            <span>Impact {String(index + 1).padStart(2, "0")}</span>
-            <strong>{metric}</strong>
-          </div>
-        ))}
+      <div className="case-metrics" aria-label={`${item.title} 핵심 성과`}>
+        <span className="case-metrics-title">Key impact</span>
+        <div className="case-metric-list">
+          {item.metrics.map((metric) => <span key={metric}>{metric}</span>)}
+        </div>
       </div>
       {open && (
         <div className="case-detail">
