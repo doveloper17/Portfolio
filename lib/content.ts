@@ -7,12 +7,11 @@ export type Skill = { label: string; icon: "code" | "server" | "database" | "net
 export type Employment = { company: string; role: string; date: string; detail: string };
 export type CareerArea = {
   number: string;
-  period: string;
+  label: string;
   title: string;
   summary: string;
-  contributions: string[];
-  impact: string;
-  stack: string;
+  responsibilities: string[];
+  ownership: string;
 };
 export type CaseStudy = { number: string; period: string; title: string; summary: string; metrics: string[]; stack: string; problem: string; actions: string[]; result: string };
 export type MoreWork = { icon: "layers" | "server" | "network"; title: string; summary: string; actions: string[]; result: string };
