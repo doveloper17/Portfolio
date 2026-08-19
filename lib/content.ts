@@ -7,7 +7,6 @@ export type Skill = { label: string; icon: "code" | "server" | "database" | "net
 export type Employment = { company: string; role: string; date: string; detail: string };
 export type CareerArea = {
   number: string;
-  label: string;
   title: string;
   summary: string;
   responsibilities: string[];

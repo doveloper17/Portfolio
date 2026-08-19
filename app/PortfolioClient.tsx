@@ -154,7 +154,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
         <div className="career-areas">
           {career.areas.map((area) => (
             <article className="career-area" key={area.number}>
-              <div className="career-area-meta"><span>{area.number}</span><small>{area.label}</small></div>
+              <div className="career-area-meta"><span>{area.number}</span></div>
               <div className="career-area-intro"><h3>{area.title}</h3><p>{area.summary}</p></div>
               <div className="career-area-detail">
                 <ul>{area.responsibilities.map((responsibility) => <li key={responsibility}>{responsibility}</li>)}</ul>
