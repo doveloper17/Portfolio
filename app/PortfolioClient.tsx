@@ -12,7 +12,6 @@ import {
   GitBranch,
   Layers3,
   Mail,
-  MapPin,
   Network,
   Phone,
   ServerCog,
@@ -42,8 +41,7 @@ function CaseStudy({ item }: { item: CaseStudyType }) {
           {item.metrics.map((metric) => <span key={metric}>{metric}</span>)}
         </div>
       </div>
-      {open && (
-        <div className="case-detail">
+      <div className="case-detail" aria-hidden={!open}>
           <div className="case-flow" aria-label="개선 전후 비교">
             <div className="case-flow-block before">
               <p className="detail-label">Challenge</p>
@@ -72,8 +70,7 @@ function CaseStudy({ item }: { item: CaseStudyType }) {
             <span>Stack</span>
             <p>{item.stack}</p>
           </div>
-        </div>
-      )}
+      </div>
     </article>
   );
 }
@@ -92,7 +89,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
 
       <section className="hero" id="home">
         <div className="hero-copy">
-          <p className="eyebrow"><span />{resume.role} · {resume.location}</p>
+          <p className="eyebrow"><span />{resume.role}</p>
           <h1>{resume.headline}<br /><em>{resume.accentHeadline}</em></h1>
           <p className="hero-description">{resume.introduction}</p>
           <div className="hero-actions">
@@ -124,7 +121,6 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
           <div className="profile-list">
             <a href={`mailto:${resume.email}`}><Mail size={17} /><span>Email</span><strong>{resume.email}</strong></a>
             <a href={`tel:${resume.phone.replace(/\s/g, "")}`}><Phone size={17} /><span>Phone</span><strong>{resume.phone}</strong></a>
-            <div><MapPin size={17} /><span>Location</span><strong>{resume.location}</strong></div>
             <a href={resume.githubUrl} target="_blank" rel="noreferrer"><GitBranch size={17} /><span>GitHub</span><strong>{resume.githubLabel}</strong></a>
           </div>
         </div>
@@ -150,7 +146,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
 
       <section className="section career-section" id="career">
         <div className="section-kicker"><span>02</span> CAREER</div>
-        <div className="section-heading-row"><h2>경력기술서</h2><p>{career.subtitle}</p></div>
+        <div className="section-heading-row"><h2>경력기술서</h2>{career.subtitle && <p>{career.subtitle}</p>}</div>
         <div className="career-areas">
           {career.areas.map((area) => (
             <article className="career-area" key={area.number}>
@@ -167,7 +163,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
 
       <section className="section portfolio-section" id="portfolio">
         <div className="section-kicker"><span>03</span> SELECTED WORK</div>
-        <div className="section-heading-row"><h2>{portfolio.title}</h2><p>{portfolio.subtitle}</p></div>
+        <div className="section-heading-row"><h2>{portfolio.title}</h2>{portfolio.subtitle && <p>{portfolio.subtitle}</p>}</div>
         <div className="cases">{portfolio.cases.map((item) => <CaseStudy item={item} key={item.number} />)}</div>
       </section>
 

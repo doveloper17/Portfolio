@@ -39,6 +39,7 @@ main { overflow:hidden; }
 .career-areas{border-top:2px solid var(--ink)}.career-area{display:grid;grid-template-columns:130px minmax(250px,.8fr) minmax(380px,1.2fr);gap:40px;padding:38px 4px;border-bottom:1px solid var(--line)}.career-area-meta>span{color:var(--warm);font:750 11px/1 Arial,sans-serif}.career-area-intro h3{margin:0;font-size:23px;line-height:1.4;word-break:keep-all}.career-area-intro p{margin:14px 0 0;color:var(--muted);font-size:14px;line-height:1.75;word-break:keep-all}.career-area-detail ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.career-area-detail li{position:relative;padding-left:14px;color:#4f5358;font-size:13px;line-height:1.65;word-break:keep-all}.career-area-detail li:before{content:"";position:absolute;left:0;top:.7em;width:5px;height:5px;background:var(--accent)}.career-area-ownership{display:grid;grid-template-columns:76px 1fr;gap:12px;margin-top:19px;padding-top:16px;border-top:1px solid var(--line)}.career-area-ownership span{color:var(--warm);font:750 9px/1.5 Arial,sans-serif;text-transform:uppercase}.career-area-ownership strong{font-size:12px;line-height:1.65}
 .cases{border-top:2px solid var(--ink)}.case-study{border-bottom:1px solid var(--line);padding:0}.case-heading{width:100%;display:grid;grid-template-columns:70px 1fr 45px;gap:16px;text-align:left;border:0;background:transparent;padding:32px 4px 24px;cursor:pointer}.case-number{font:700 12px Arial;color:var(--warm)}.case-intro{display:flex;flex-direction:column;gap:8px}.case-period{font:600 11px Arial;color:var(--muted)}.case-intro strong{font-size:25px}.case-intro>span:last-child{color:var(--muted);line-height:1.6}.case-toggle{justify-self:end;width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;transition:transform .2s,background .2s,color .2s}.is-open .case-toggle{transform:rotate(180deg);background:var(--ink);color:white}
 .case-metrics{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px;align-items:center;margin:0 0 18px 90px}.case-metrics-title{color:var(--warm);font:750 9px/1 Arial,sans-serif;text-transform:uppercase}.case-metric-list{display:flex;gap:8px;flex-wrap:wrap}.case-metric-list span{padding:8px 11px;background:#e9eeeb;color:#185b4e;font-size:11px;font-weight:750;border-radius:3px}.case-detail{margin:28px 4px 38px 90px;border-top:1px solid var(--line)}.case-detail p{margin:0;color:#555a5f;line-height:1.75;font-size:14px;word-break:keep-all}.detail-label{color:var(--accent)!important;font:750 10px/1 Arial,sans-serif!important;text-transform:uppercase;margin-bottom:11px!important}.case-detail h4{margin:0 0 14px;font-size:18px;line-height:1.35}.case-flow{display:grid;grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr);align-items:stretch;padding:28px 0}.case-flow-block{padding:24px;background:white;border-left:3px solid #b9bdbe}.case-flow-block p{white-space:pre-line}.case-flow-block.after{border-left-color:var(--accent)}.case-flow-arrow{display:grid;place-items:center;color:var(--warm)}
+.case-study:not(.is-open) .case-detail{display:none}
 .case-decisions{display:grid;grid-template-columns:190px minmax(0,1fr);gap:38px;padding:28px 0;border-top:1px solid var(--line)}.case-decisions ol{list-style:none;margin:0;padding:0;display:grid;gap:0}.case-decisions li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;padding:0 0 18px;margin-bottom:18px;border-bottom:1px solid var(--line)}.case-decisions li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}.case-decisions li>span{width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--line);color:var(--warm);font:700 9px/1 Arial,sans-serif}.case-decisions li p{padding-top:2px;color:#45494e}
 .case-stack{display:grid;grid-template-columns:190px 1fr;gap:38px;align-items:start;padding-top:20px;border-top:1px solid var(--line)}.case-stack>span{color:var(--accent);font:750 10px/1 Arial,sans-serif;text-transform:uppercase}.case-stack p{color:var(--blue);font:650 11px/1.6 Arial,sans-serif!important}
 .portfolio-section{padding-bottom:0;border-bottom:0}
@@ -47,4 +48,70 @@ footer{background:#202225;color:white;padding:100px max(24px,calc((100vw - 1180p
 @media (max-width:850px){.site-header{width:calc(100% - 32px);grid-template-columns:1fr auto}.site-header nav{display:none}.hero{width:calc(100% - 32px);grid-template-columns:1fr;gap:46px;padding:58px 0}.hero-visual{height:360px}.impact-strip{grid-template-columns:1fr 1fr;padding:0}.impact-strip div{min-height:120px;border-bottom:1px solid #3b3d40}.section{width:calc(100% - 32px);padding:82px 0}.section-grid,.skill-grid{grid-template-columns:1fr;gap:50px}.skill-grid{gap:0}.skill-row:nth-child(odd){border-right:0}.employment{grid-template-columns:1fr;gap:30px}.employment-list article{grid-template-columns:130px 190px 1fr;gap:20px}.career-section{width:100%;padding-left:16px;padding-right:16px}.section-heading-row{display:block}.section-heading-row p{margin-top:20px}.career-area{grid-template-columns:90px minmax(0,1fr);gap:26px}.career-area-detail{grid-column:2}.case-heading{grid-template-columns:40px 1fr 38px}.case-metrics,.case-detail{margin-left:56px}.case-decisions,.case-stack{grid-template-columns:150px minmax(0,1fr);gap:24px}.other-grid{grid-template-columns:1fr}.other-grid>article{border-right:0;border-bottom:1px solid var(--line);min-height:0}.other-grid strong{margin-top:24px}footer{grid-template-columns:1fr}.footer-contact{max-width:420px}}
 @media (max-width:620px){.case-flow{grid-template-columns:1fr;padding-bottom:22px}.case-flow-arrow{height:42px;transform:rotate(90deg)}.case-decisions,.case-stack{grid-template-columns:1fr;gap:18px}.case-decisions ol{margin-top:2px}}
 @media (max-width:520px){.hero h1{font-size:39px}.hero-description{font-size:16px}.hero-actions{align-items:flex-start;flex-direction:column}.hero-visual{height:320px}.flow-node{width:190px}.node-source{left:12px}.node-core{right:8px}.node-product{left:18px}.impact-strip strong{font-size:25px}.profile-list>a,.profile-list>div{grid-template-columns:22px 66px 1fr}.skill-row{grid-template-columns:30px 72px 1fr;padding:18px 3px}.employment-list article{grid-template-columns:1fr;gap:7px;padding:22px 0}.employment-list p{margin-top:5px}.career-area{grid-template-columns:1fr;gap:16px;padding:30px 0}.career-area-detail{grid-column:1}.case-intro strong{font-size:20px}.case-heading{grid-template-columns:30px 1fr 32px;gap:8px}.case-number{font-size:10px}.case-metrics,.case-detail{margin-left:38px}.case-metrics{grid-template-columns:1fr;gap:10px}.case-flow-block{padding:18px}.footer-contact a{gap:12px}}
-@media print{.site-header,.hero-visual,.hero-actions,.case-toggle{display:none!important}.hero,.section{width:100%;min-height:0;padding:32px 0}.impact-strip{padding:0}.case-detail{display:grid!important}.case-study{break-inside:avoid}body{background:white}footer{padding:40px;color:white}}
+@page{size:A4 landscape;margin:0}
+@media print{
+  :root{--paper:#fff}
+  html{scroll-behavior:auto}
+  body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  main{overflow:visible}
+  .site-header,.hero-actions,.case-toggle{display:none!important}
+  .hero,.section{width:100%;margin:0}
+  .hero{min-height:154mm;grid-template-columns:1.1fr .9fr;gap:12mm;padding:13mm 10mm 10mm;break-after:avoid-page}
+  .hero h1{font-size:44px;line-height:1.17}
+  .hero-description{font-size:15px;line-height:1.65}
+  .hero-visual{display:block!important;height:104mm}
+  .impact-strip{grid-template-columns:repeat(4,1fr);padding:0 10mm;break-after:page}
+  .impact-strip div{min-height:30mm;padding:7mm 6mm}
+  .impact-strip strong{font-size:23px}
+  .section{padding:12mm 10mm;border-bottom:0}
+  .section-kicker{margin-bottom:9mm}
+  .section h2{font-size:36px}
+  .lead{margin-top:5mm;font-size:14px;line-height:1.65}
+  .section-grid{grid-template-columns:1.1fr .9fr;gap:15mm}
+  .profile-list>a,.profile-list>div{padding:3.5mm 1mm}
+  .skill-grid{grid-template-columns:1fr 1fr;margin-top:7mm}
+  .skill-row{min-height:17mm;padding:3mm 4mm}
+  .skill-row:nth-child(odd){border-right:1px solid var(--line)}
+  .employment{grid-template-columns:34mm 1fr;gap:8mm;margin-top:4mm;padding-top:3mm}
+  .employment-list article{grid-template-columns:29mm 37mm 1fr;gap:4mm;padding:2.5mm 0}
+  .employment-list h3{margin-bottom:1mm;font-size:16px}
+  .employment-list time{font-size:9px}
+  .employment-list article>div>strong{font-size:10px}
+  .employment-list p{font-size:10px;line-height:1.45}
+  .resume-section{break-after:page}
+  .career-section{padding-left:10mm;padding-right:10mm;break-after:page}
+  .section-heading-row{margin-bottom:8mm}
+  .career-areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:2px solid var(--ink)}
+  .career-area{display:block;padding:6mm;border-bottom:1px solid var(--line);break-inside:avoid}
+  .career-area:nth-child(odd){border-right:1px solid var(--line)}
+  .career-area-meta{margin-bottom:3mm}
+  .career-area-intro p{margin-top:2.5mm}
+  .career-area-detail{margin-top:4mm}
+  .career-area-intro h3{font-size:19px}
+  .career-area-intro p,.career-area-detail li{font-size:11px;line-height:1.55}
+  .career-area-ownership{grid-template-columns:19mm 1fr;margin-top:4mm;padding-top:3mm}
+  .portfolio-section{padding-bottom:0}
+  .portfolio-section .section-kicker{margin-bottom:5mm}
+  .portfolio-section .section-heading-row{margin-bottom:2mm}
+  .cases{border-top:0}
+  .case-study{padding-top:5mm;break-before:page;break-inside:avoid-page;border-bottom:0}
+  .case-study:first-child{padding-top:0;break-before:auto}
+  .case-heading{display:flex;gap:4mm;padding:0 1mm 3mm;break-inside:avoid}
+  .case-number{flex:0 0 18mm}
+  .case-intro{min-width:0;flex:1}
+  .case-intro strong{font-size:23px}
+  .case-metrics{grid-template-columns:18mm minmax(0,1fr);margin:0 0 3mm 22mm}
+  .case-detail,.case-study:not(.is-open) .case-detail{display:block!important;margin:0 1mm 0 22mm}
+  .case-detail[aria-hidden="true"]{display:block!important}
+  .case-flow{grid-template-columns:minmax(0,1fr) 12mm minmax(0,1fr);padding:4mm 0}
+  .case-flow-block{padding:4mm}
+  .case-detail p{font-size:12px;line-height:1.6}
+  .case-decisions{grid-template-columns:40mm minmax(0,1fr);gap:8mm;padding:4mm 0}
+  .case-decisions li{break-inside:avoid;padding-bottom:2mm;margin-bottom:2mm}
+  .case-stack{grid-template-columns:40mm 1fr;gap:8mm;padding-top:3mm}
+  .other-work{break-before:page}
+  .other-grid{grid-template-columns:repeat(3,1fr)}
+  .other-grid>article{min-height:128mm;padding:7mm 6mm;break-inside:avoid}
+  footer{min-height:210mm;padding:28mm 10mm 8mm;grid-template-columns:1fr auto;break-before:page}
+  footer h2{font-size:42px}
+}
