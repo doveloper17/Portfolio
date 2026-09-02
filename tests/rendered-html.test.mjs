@@ -17,6 +17,12 @@ test("server-renders the portfolio shell", async () => {
   assert.match(html, /이도훈 \| Backend Engineer/);
   assert.match(html, /복잡한 데이터 흐름/);
   assert.match(html, /물동량 데이터 수집 구조 개선/);
+  assert.match(html, /일 수집량 1.8만 건 → 4.5만 건/);
+  assert.match(html, /누락 구간 재수집·실패 재처리 자동화/);
+  assert.match(html, /BL 데이터 조회 속도 약 50% 개선/);
+  assert.match(html, /조회 기능 개발 속도 약 30% 향상 예상/);
+  assert.equal((html.match(/class="case-study is-open"/g) ?? []).length, 4);
+  assert.doesNotMatch(html, /수집량 2.5배 증가/);
   assert.match(html, /경력기술서/);
   assert.doesNotMatch(html, /Your site is taking shape|codex-preview/);
 });

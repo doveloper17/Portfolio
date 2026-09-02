@@ -23,7 +23,7 @@ const skillIcons = { code: Code2, server: ServerCog, database: Database, network
 const moreWorkIcons = { layers: Layers3, server: ServerCog, network: Network };
 
 function CaseStudy({ item }: { item: CaseStudyType }) {
-  const [open, setOpen] = useState(item.number === "01");
+  const [open, setOpen] = useState(true);
   return (
     <article className={`case-study ${open ? "is-open" : ""}`}>
       <button className="case-heading" onClick={() => setOpen(!open)} aria-expanded={open}>
@@ -55,6 +55,19 @@ function CaseStudy({ item }: { item: CaseStudyType }) {
               <p>{item.result}</p>
             </div>
           </div>
+          {item.architecture && (
+            <div className="case-architecture" aria-label={`${item.title} 구조 변화`}>
+              <div>
+                <span>Before</span>
+                <p>{item.architecture.before.join(" → ")}</p>
+              </div>
+              <ArrowRight className="case-architecture-arrow" size={21} aria-hidden="true" />
+              <div className="after">
+                <span>After</span>
+                <p>{item.architecture.after.join(" → ")}</p>
+              </div>
+            </div>
+          )}
           <div className="case-decisions">
             <div>
               <p className="detail-label">My contribution</p>

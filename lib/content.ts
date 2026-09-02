@@ -12,7 +12,18 @@ export type CareerArea = {
   responsibilities: string[];
   ownership: string;
 };
-export type CaseStudy = { number: string; period: string; title: string; summary: string; metrics: string[]; stack: string; problem: string; actions: string[]; result: string };
+export type CaseStudy = {
+  number: string;
+  period: string;
+  title: string;
+  summary: string;
+  metrics: string[];
+  stack: string;
+  problem: string;
+  actions: string[];
+  result: string;
+  architecture?: { before: string[]; after: string[] };
+};
 export type MoreWork = { icon: "layers" | "server" | "network"; title: string; summary: string; actions: string[]; result: string };
 export type SiteContent = {
   resume: {
