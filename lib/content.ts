@@ -18,6 +18,10 @@ export type CaseStudy = {
   title: string;
   summary: string;
   metrics: string[];
+  evidence: string;
+  team: string;
+  role: string;
+  collaboration?: string;
   stack: string;
   problem: string;
   actions: string[];
@@ -28,6 +32,7 @@ export type MoreWork = { icon: "layers" | "server" | "network"; title: string; s
 export type SiteContent = {
   resume: {
     name: string; role: string; headline: string; accentHeadline: string; introduction: string;
+    currentStatus: string; availability: string;
     email: string; phone: string; githubLabel: string; githubUrl: string; careerDuration: string;
     resumeTitle: string; resumeDescription: string; stats: { value: string; label: string }[]; skills: Skill[];
     employmentTitle: string; employmentRange: string; employment: Employment[];

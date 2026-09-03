@@ -41,6 +41,13 @@ function CaseStudy({ item }: { item: CaseStudyType }) {
           {item.metrics.map((metric) => <span key={metric}>{metric}</span>)}
         </div>
       </div>
+      <div className="case-context">
+        <span className="case-context-title">Evidence</span>
+        <div className="case-context-list">
+          <div><span>측정 기준</span><p>{item.evidence}</p></div>
+          <div><span>{item.team}</span><p>{item.role}</p></div>
+        </div>
+      </div>
       <div className="case-detail" aria-hidden={!open}>
           <div className="case-flow" aria-label="개선 전후 비교">
             <div className="case-flow-block before">
@@ -79,6 +86,12 @@ function CaseStudy({ item }: { item: CaseStudyType }) {
               ))}
             </ol>
           </div>
+          {item.collaboration && (
+            <div className="case-collaboration">
+              <span>Collaboration</span>
+              <p>{item.collaboration}</p>
+            </div>
+          )}
           <div className="case-stack">
             <span>Stack</span>
             <p>{item.stack}</p>
@@ -97,7 +110,6 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
         <nav aria-label="주요 메뉴">
           <a href="#resume">이력서</a><a href="#career">경력기술서</a><a href="#portfolio">포트폴리오</a>
         </nav>
-        <a className="icon-link" href={resume.githubUrl} target="_blank" rel="noreferrer" aria-label="GitHub 열기"><GitBranch size={20} /></a>
       </header>
 
       <section className="hero" id="home">
@@ -105,6 +117,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
           <p className="eyebrow"><span />{resume.role}</p>
           <h1>{resume.headline}<br /><em>{resume.accentHeadline}</em></h1>
           <p className="hero-description">{resume.introduction}</p>
+          <p className="hero-status"><span>{resume.currentStatus}</span><span>{resume.availability}</span></p>
           <div className="hero-actions">
             <a className="primary-button" href="#portfolio">대표 프로젝트 보기 <ArrowDown size={18} /></a>
             <button className="text-button" onClick={() => window.print()}><Download size={18} /> PDF로 저장</button>
@@ -187,7 +200,7 @@ export default function PortfolioClient({ content }: { content: SiteContent }) {
 
       <footer>
         <div><p className="eyebrow"><span />LET&apos;S BUILD RELIABLE SYSTEMS</p><h2>함께 일할 백엔드 개발자를<br />찾고 계신가요?</h2></div>
-        <div className="footer-contact"><a href={`mailto:${resume.email}`}>{resume.email} <ArrowUpRight size={19} /></a><a href={resume.githubUrl} target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={19} /></a></div>
+        <div className="footer-contact"><a href={`mailto:${resume.email}`}>{resume.email} <ArrowUpRight size={19} /></a></div>
         <p className="copyright">© 2026 Lee Dohoon. Built with care for clarity.</p>
       </footer>
     </main>
